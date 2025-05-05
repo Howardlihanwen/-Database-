@@ -5,7 +5,7 @@
 now="$(date +'%Y%m%d')"
 
 # 使用對應DB套件進行對應指令使用
-sqlplus AAA/123456@xxx.xx.xx.xx:1522/指定資料庫 <<EOF
+sqlplus AAA/123456@xxx.xx.xx.xx:1234/指定資料庫 <<EOF
 set pagesize 0
 set feedback off
 set trimspool on
@@ -34,9 +34,9 @@ rm /xxxx/xxxx/scripts/result.txt /xxxx/xxxx/scripts/result1.txt
 now="$(date +'%Y%m%d')"
 
 # 設定環境變數（或使用 .pgpass 來避免密碼寫死）
-export PGPASSWORD='Twm09350935'
+export PGPASSWORD='123456'
 
-psql -h xxxx.xxxx.xxxx.xxxx -p 123456 -U AAAA -d 指定資料庫 -At -F '|' <<EOF > /xxxx/xxxx/scripts/result.txt
+psql -h xxxx.xxxx.xxxx.xxxx -p 1234 -U AAAA -d 指定資料庫 -At -F '|' <<EOF > /xxxx/xxxx/scripts/result.txt
 SELECT field1, field2, field3, field4, field5, field6, field7, field8, field9 FROM 指定table;
 EOF
 
